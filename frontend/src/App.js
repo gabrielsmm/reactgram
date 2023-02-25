@@ -3,6 +3,10 @@ import './App.css';
 // Router
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+// Components
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
 // Pages
 import Home from './pages/Home/Home';
 import Login from './pages/Auth/Login';
@@ -12,11 +16,15 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-        </Routes>
+        <Navbar />  
+        <div class="container">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </div>
+        <Footer />
       </BrowserRouter>
     </div>
   );
